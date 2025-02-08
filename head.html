@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    /* Background Styling */
+    .polygon-background {
+        background-image: url('images/nutech.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+        position: relative;
+    }
+
+    /* Blur Effect */
+    .polygon-background::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5); /* Dark Overlay for better text contrast */
+        backdrop-filter: blur(3px); /* Blurs the background */
+        -webkit-backdrop-filter: blur(10px); /* Safari Support */
+        z-index: 1;
+    }
+
+    /* Ensure Content is Above the Blur */
+    .content {
+        position: relative;
+        z-index: 10;
+    }
+</style>
+<body>
+
+  <!-- Hero Section with Blurred Polygon Background -->
+  <section class="polygon-background flex flex-col items-center justify-center px-8">
+    <div class="content text-center">
+      <h1 class="text-5xl font-extrabold text-white mb-4">
+         National University of Technology
+      </h1>
+      <p class="text-xl font-bold text-gray-300 mb-6">
+         Alumni <span class="text-white">Year Book</span> 
+      </p>
+      <div class="flex justify-center gap-4">
+        <button class="bg-gradient-to-r from-[#73284A] to-[#13354E] text-white px-6 py-3 font-semibold rounded-lg shadow-lg transition-all duration-700 ease-in-out hover:from-[#5a1f3a] hover:to-[#102a3e] hover:shadow-xl">
+          Year Book
+        </button>
+      </div>
+    </div>
+
+    <!-- Social Links
+    <div class="absolute bottom-8 flex gap-4 z-10">
+      <ul class="flex gap-6 text-gray-300 font-semibold">
+        <li><a href="#" class="hover:text-green-400 font-bold">Fiverr</a></li>
+        <li><a href="#" class="hover:text-green-400 font-bold">Upwork</a></li>
+        <li><a href="#" class="hover:text-blue-400 font-bold">LinkedIn</a></li>
+        <li><a href="#" class="hover:text-purple-400 font-bold">GitHub</a></li>
+      </ul>
+    </div> -->
+  </section>
+
+</body>
+</html>

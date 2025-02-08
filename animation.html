@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Inside Text</title>
+    <style>
+        .aboutus {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            margin: 0;
+        }
+
+        .text-container {
+            font-size: 120px;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-image: url('images/abt_5.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p class="text-container">Subscribe</p>
+</body>
+</html>
