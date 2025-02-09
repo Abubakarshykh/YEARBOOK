@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events & Reunions | Nutech University</title>
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 flex flex-col min-h-screen">
+
+  <!-- Main content -->
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-4xl font-semibold text-[#2E3A44]">Events & Reunions</h2>
+    </div>
+
+    <!-- Upcoming Events Section -->
+    <section id="upcoming-events" class="mb-12">
+      <h3 class="text-2xl font-semibold text-[#2E3A44] mb-6">Upcoming Events</h3>
+
+      <!-- Event Card -->
+      <div class="bg-white text-gray-900 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:shadow-blue-400"
+           style="box-shadow: 0 0 20px 5px rgba(59, 130, 246, 0.5);">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+          <div class="mb-4 sm:mb-0">
+            <h4 class="text-xl font-semibold text-[#2E3A44]">Spring Reunion 2025</h4>
+            <p class="text-sm mt-1">Date: April 12, 2025, 3:00 PM</p>
+            <p class="text-sm">Location: Main Campus Hall</p>
+          </div>
+          <div class="sm:mt-0">
+            <button class="bg-gradient-to-r from-[#73284A] to-[#13354E] hover:from-[#5E1D3C] hover:to-[#0E2D40] text-white px-5 py-2 rounded-full mr-2">
+              RSVP
+            </button>
+            <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-5 py-2 rounded-full">
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past Events Section -->
+    <section id="past-events" class="mb-12">
+      <h3 class="text-2xl font-semibold text-[#2E3A44] mb-6">Past Events</h3>
+
+      <!-- Event Card -->
+      <div class="bg-white text-gray-900 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:shadow-blue-400"
+           style="box-shadow: 0 0 20px 5px rgba(59, 130, 246, 0.5);">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+          <div class="mb-4 sm:mb-0">
+            <h4 class="text-xl font-semibold text-[#2E3A44]">Winter Gathering 2024</h4>
+            <p class="text-sm mt-1">Date: December 10, 2024</p>
+            <p class="text-sm">Location: Alumni Club</p>
+          </div>
+          <div class="sm:mt-0">
+            <button class="bg-gradient-to-r from-[#73284A] to-[#13354E] hover:from-[#5E1D3C] hover:to-[#0E2D40] text-white px-5 py-2 rounded-full mr-2">
+              Photos
+            </button>
+            <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-5 py-2 rounded-full">
+              Highlights
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Create New Event Form Section -->
+    <section id="create-event" class="mb-12">
+      <h3 class="text-2xl font-semibold text-[#2E3A44] mb-6">Create a New Event</h3>
+
+      <!-- Form with Glow Shadow and Hover Effect -->
+      <form id="eventForm" class="space-y-6 p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl hover:shadow-blue-400"
+            style="box-shadow: 0 0 20px 5px rgba(59, 130, 246, 0.5);">
+        <!-- Event Name -->
+        <div>
+          <label for="eventName" class="block text-sm font-medium text-[#2E3A44] mb-2">Event Name</label>
+          <input type="text" id="eventName" name="eventName" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#73284A]" placeholder="e.g., Summer Meetup" required />
+        </div>
+
+        <!-- Event Date & Time -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="eventDate" class="block text-sm font-medium text-[#2E3A44] mb-2">Date</label>
+            <input type="date" id="eventDate" name="eventDate" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#73284A]" required />
+          </div>
+          <div>
+            <label for="eventTime" class="block text-sm font-medium text-[#2E3A44] mb-2">Time</label>
+            <input type="time" id="eventTime" name="eventTime" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#73284A]" />
+          </div>
+        </div>
+
+        <!-- Event Location -->
+        <div>
+          <label for="eventLocation" class="block text-sm font-medium text-[#2E3A44] mb-2">Location</label>
+          <input type="text" id="eventLocation" name="eventLocation" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#73284A]" placeholder="e.g., Main Campus, Room 101" required />
+        </div>
+
+        <!-- Event Description -->
+        <div>
+          <label for="eventDescription" class="block text-sm font-medium text-[#2E3A44] mb-2">Description</label>
+          <textarea id="eventDescription" name="eventDescription" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#73284A]" placeholder="Brief description of the event..."></textarea>
+        </div>
+
+        <button type="submit" class="bg-gradient-to-r from-[#73284A] to-[#13354E] hover:from-[#5E1D3C] hover:to-[#0E2D40] text-white px-6 py-3 rounded-full transition-colors">
+          Create Event
+        </button>
+      </form>
+    </section>
+
+  </main>
+
+</body>
+</html>
