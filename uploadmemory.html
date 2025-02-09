@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Memory</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #73284A, #13354E);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: popup 0.5s forwards;
+        }
+        @keyframes popup {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #4a4a4a;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+        }
+        button {
+            background: linear-gradient(to right, #73284A, #13354E);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background: linear-gradient(to right, #5e1f3b, #0f2a3d);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Submit Your Memory</h1>
+       <form id="memoryForm" enctype="multipart/form-data">
+    <div>
+        <label for="memory-title">Memory Title</label>
+        <input type="text" id="memory-title" name="title" placeholder="Enter the title of your memory">
+    </div>
+    <div>
+        <label for="batch-number">Batch Number</label>
+        <input type="text" id="batch-number" name="batchNumber" placeholder="Enter your batch number">
+    </div>
+    <div>
+        <label for="memory-type">Memory Type</label>
+        <select id="memory-type" name="memoryType">
+            <option>Photo</option>
+            <option>Video</option>
+        </select>
+    </div>
+    <div>
+        <label for="upload-memory">Upload Memory</label>
+        <input type="file" id="upload-memory" name="memory">
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="description" placeholder="Enter the description of your memory"></textarea>
+    </div>
+    <div>
+        <button type="submit">Submit Memory</button>
+    </div>
+</form>
+
+<script>
+document.getElementById('memoryForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+
+    const response = await fetch('http://localhost:5000/submit-memory', {
+        method: 'POST',
+        body: formData
+    });
+
+    const result = await response.json();
+    alert(result.message);
+});
+</script>
+
+    </div>
+</body>
+</html>
