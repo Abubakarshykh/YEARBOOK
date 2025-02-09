@@ -1,0 +1,217 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Yearbook Gallery</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, #73284A, #13354E);
+            color: white;
+            padding: 1rem;
+        }
+        header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .memory {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .memory:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .memory img {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background: linear-gradient(to right, #73284A, #13354E);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+body {
+    font-family: Arial, sans-serif;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.thumbnail {
+    width: 200px; /* Adjust size as needed */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Yearbook Gallery</h1>
+        </div>
+    </header>
+    <main>
+        <section id="2025">
+            <h2>Memories of 2025</h2>
+            <div class="grid">
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/7R_EoLvNhG2ZM6PXNkwH8mdu3u4AIV0rf6XzF4HtNwk.jpg" alt="Students at the 2025 graduation ceremony"/>
+                    <p>Graduation Ceremony</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/Z4HUkfjCjIJ6eY0mFWtaCLddr4mlbLu1TwidxqgC3JU.jpg" alt="Group of friends at a music festival in 2025"/>
+                    <p>Music Festival</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/lR6mbN3lc1_TxRv9O-_LCMd2YE8H6hX-RZlEm04BfuA.jpg" alt="Students at the 2025 science fair"/>
+                    <p>Science Fair</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/eSVQKasDGBO4BaBBNVWGiy6u9Q4dNNVluNxZXKWZfNY.jpg" alt="Group photo from the 2025 cultural day event"/>
+                    <p>Cultural Day</p>
+                </div>
+            </div>
+        </section>
+        <section id="2024">
+            <h2>Memories of 2024</h2>
+            <div class="grid">
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/-pvxn82HlVikxUBnhWchFtcfHXDIA5a8jWMiPt01NwA.jpg" alt="Students at the 2024 spring concert"/>
+                    <p>Spring Concert</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/htXgm9M8WILZD4ySI4Fnzm1HO33lfUQKLjFd7KZYQC8.jpg" alt="Group of friends at a summer camp in 2024"/>
+                    <p>Summer Camp</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/31bl-Q1jv9KKRLK9uaYVrXVw-_1OabMMju9MorIcB8E.jpg" alt="Students at the 2024 art exhibition"/>
+                    <p>Art Exhibition</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/TtonaEibyV9cQfkmr5FCE9BovUchL6RZzeLnbhd16po.jpg" alt="Group photo from the 2024 sports day event"/>
+                    <p>Sports Day</p>
+                </div>
+            </div>
+        </section>
+        <section id="2023">
+            <h2>Memories of 2023</h2>
+            <div class="grid">
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/m7DDzr36ZqS0D9wtNeDhrx5xDfVlSTfPIGJImilKTHU.jpg" alt="Virtual graduation ceremony in 2023"/>
+                    <p>Virtual Graduation</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/L9ytnM6kMRb2pWDm3p3wmDMIZWx5wMROVMkovprjGZc.jpg" alt="Students participating in an online class in 2023"/>
+                    <p>Online Classes</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/8j35vPjl76yTMu-V6Cc_X-msX3_APAC-pHkPlZRi8tc.jpg" alt="Students at a socially distanced outdoor event in 2023"/>
+                    <p>Outdoor Event</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/l-ZfnE6UiChFNLOMOF2i6vr96127SqeD-mUq9sCn5wQ.jpg" alt="Group of friends having a virtual hangout in 2023"/>
+                    <p>Virtual Hangout</p>
+                </div>
+            </div>
+        </section>
+        <section id="2022">
+            <h2>Memories of 2022</h2>
+            <div class="grid">
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/qheFVR9PbkPqZZNavxODlv9lQq9G_JIaaJPJCkPViRc.jpg" alt="Students at the 2022 spring festival"/>
+                    <p>Spring Festival</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/0dzkJiY86KhbTE34oRxWULnwcB-8j4Buu9cUU9TXbZQ.jpg" alt="Group of friends at a beach party in 2022"/>
+                    <p>Beach Party</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/c3pJ1A9NtqKOt8G1cJB589Cjg2l9XnhLtmygB15YULE.jpg" alt="Students at the 2022 talent show"/>
+                    <p>Talent Show</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/2tCSa4qkdrESvFegnsy2GyuwEea_jW0M-WASQRXk_l0.jpg" alt="Group photo from the 2022 homecoming event"/>
+                    <p>Homecoming</p>
+                </div>
+            </div>
+        </section>
+        <section id="2021">
+            <h2>Memories of 2021</h2>
+            <div class="grid">
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/Xe9zsW--pqrLold5TmXjYsofdJAbUCD1Q9tN1fblNlI.jpg" alt="Group of friends at a summer picnic in 2021"/>
+                    <p>Summer Picnic</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/IOPwQLWf9THJ9n94Aey2jT9ch2eWc6IK3sGfnsAs3Iw.jpg" alt="Students at the 2021 graduation ceremony"/>
+                    <p>Graduation Ceremony</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/O4JnJoGibibsU1DcyTjNrJhpzjAMY0Dcr_ymVTKQVj8.jpg" alt="Group photo from the 2021 winter formal dance"/>
+                    <p>Winter Formal</p>
+                </div>
+                <div class="memory">
+                    <img src="https://storage.googleapis.com/a1aa/image/jI6BhPke6qikjQWrnEqMSdHQUWGrW_bzw_BwUYUzJlE.jpg" alt="Students participating in a science fair in 2021"/>
+                    <p>Science Fair</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2023 Yearbook Gallery. All rights reserved.</p>
+    </footer>
+</body>
+</html>
