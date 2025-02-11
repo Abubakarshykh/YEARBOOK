@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yearbook Data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h1 class="text-center text-4xl font-extrabold text-white mt-8">Yearbook</h1>
+    <div id="data" class="w-auto py-6 mx-auto mt-2 px-4 bg-white/20 backdrop-blur-lg rounded-xl shadow-lg border border-white/30"></div>
+
+
+    <!-- Popup -->
+    <div id="popup" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-xl shadow-2xl w-96 text-center relative">
+            <button class="absolute top-2 right-2 text-2xl text-gray-700 hover:text-red-600" onclick="closePopup()">×</button>
+            <h3 id="popup-name" class="text-2xl font-bold text-gray-900"></h3>
+            <p id="popup-batch" class="text-gray-600 text-lg"></p>
+            <p id="popup-department" class="text-gray-600 text-lg"></p>
+            <p class="mt-4 text-gray-700 text-base"><strong>Quote:</strong> <span id="popup-quote"></span></p>
+        </div>
+    </div>
+
+    <script>
+        const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQlmrGpzmRgavhEOsVbdWh7j_90MRO4M_ejDep_wlUujMxoq4OkEGxfU7CzO6PVxIDShleCIIEeIkyY/pub?output=tsv";
+
+        fetch(sheetUrl)
+            .then(response => response.text())
+            .then(tsvData => {
+                const rows = tsvData.split("\n").map(row => row.split("\t"));
+                const headers = rows[0];
+                const data = rows.slice(1);
+
+                const batches = { "2018": [], "2019": [], "2020": [], "2021": [] };
+
+                data.forEach(row => {
+                    const batch = row[4]?.trim();
+                    if (batches[batch]) batches[batch].push(row);
+                });
+
+                const container = document.getElementById("data");
+                container.innerHTML = "";
+
+                Object.keys(batches).forEach(batch => {
+                    renderBatch(batch, batches[batch], container);
+                });
+            })
+            .catch(error => console.error("Error fetching or parsing TSV data:", error));
+
+        function renderBatch(batchName, batchData, container) {
+            if (batchData.length === 0) return;
+
+            let html = `<div class='mt-10'><h2 class='text-2xl font-semibold text-white mb-6'>Batch ${batchName}</h2>`;
+            html += `<div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-6'>`;
+
+            batchData.forEach(row => {
+                const name = row[1]?.trim() || "Unknown";
+                const NutechID = row[3]?.trim() || "Unknown";
+                const department = row[5]?.trim() || "Unknown";
+                const quote = row[7]?.trim() || "No quote provided";
+
+                html += `
+                    <div class='bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1 text-center cursor-pointer'  
+                        onclick="openPopup('${name}', '${batchName}', '${department}', '${quote}')">
+                        <h3 class='text-xl font-bold text-gray-900'>${name}</h3>
+                        <p class='text-gray-600 font-medium'>Nutech ID: ${NutechID}</p>
+                    </div>`;
+            });
+
+            html += `</div></div>`;
+            container.innerHTML += html;
+        }
+
+        function openPopup(name, batch, department, quote) {
+            document.getElementById("popup-name").textContent = name;
+            document.getElementById("popup-batch").textContent = `Batch: ${batch}`;
+            document.getElementById("popup-department").textContent = `Department: ${department}`;
+            document.getElementById("popup-quote").textContent = quote;
+            document.getElementById("popup").classList.remove("hidden");
+        }
+
+        function closePopup(event) {
+    const popup = document.getElementById("popup");
+    const popupContent = popup.querySelector("div"); // Target the popup content
+
+    // Close only if the clicked area is outside the popup content
+    if (!popupContent.contains(event.target)) {
+        popup.classList.add("hidden");
+    }
+}
+
+// Add event listener to the popup background
+document.getElementById("popup").addEventListener("click", closePopup);
+
+    </script>
+</body>
+</html>

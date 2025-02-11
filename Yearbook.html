@@ -23,31 +23,33 @@
 </style>
 <body>
     <div id="navbar"></div>
-    <div id="YBmodule" class="container px-10 py-10 my-10"></div>
+    <div id="yearbooknew" class="container px-10 py-10 my-10"></div>
     <div id="footer"></div>
 
 
 
 
 <script>
-        fetch('YBmodule.html')
+fetch('yearbooknew.html')
     .then(response => response.text())
     .then(data => {
-        document.getElementById('YBmodule').innerHTML = data;
-        const scripts = document.getElementById('YBmodule').getElementsByTagName('script');
-        for (let script of scripts) {
-            eval(script.innerText); 
-        }
-        
+        document.getElementById('yearbooknew').innerHTML = data;
 
-        const scriptTags = document.querySelectorAll('#YBmodule script[src]');
-        scriptTags.forEach(scriptTag => {
+        // Execute inline scripts
+        const scripts = document.querySelectorAll('#yearbooknew script');
+        scripts.forEach(script => {
             const newScript = document.createElement('script');
-            newScript.src = scriptTag.src;
+            if (script.src) {
+                newScript.src = script.src; // External scripts
+                newScript.async = true;
+            } else {
+                newScript.textContent = script.textContent; // Inline scripts
+            }
             document.body.appendChild(newScript);
         });
     })
-    .catch(error => console.error('Error loading newform.html:', error));
+    .catch(error => console.error('Error loading yearbooknew.html:', error));
+
     fetch('navbar.html')
     .then(response => response.text())
     .then(data => {
