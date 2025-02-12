@@ -15,43 +15,7 @@
 </head>
 
 <body class="bg-gradient-to-r from-[#73284A] to-[#13354E]"> <!-- Custom Gradient Background -->
-
-  <nav class="bg-gradient-to-r from-[#73284A] to-[#13354E] backdrop-blur-lg text-white fixed w-full z-20 top-0 start-0 ">
-
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href=# class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="images/nutech_logo.png" class="h-8" alt="Flowbite Logo">
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">National University of technology</span>
-    </a>
-    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-      </button>
-    </div>
-    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-      <ul class="flex text-white flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
-        <li>
-          <a href="home.html" class="block py-2 px-3 text-white rounded-sm md:bg-transparent md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">AboutUs</a>
-        </li>
-        <li>
-          <a href="memories.html" class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Gallery</a>
-        </li>
-        <li>
-          <a href="Yearbook.html" class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">YearBook</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">ContactUs</a>
-        </li>
-      </ul>
-    </div>
-    </div>
-  </nav>
+<div id="navbar"></div>
   <br><br><br><br><br>
     <!-- Main content section for contact info and form -->
     <section class="contact-info max-w-6xl mx-auto my-10 bg-white p-8 rounded-lg shadow-2xl flex flex-col lg:flex-row">
@@ -132,69 +96,25 @@
 
                 <!-- Submit Button -->
                 <div class="form-field">
-                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-[#73284A] to-[#13354E] text-white font-semibold rounded-md hover:from-[#13354E] hover:to-[#73284A] transition duration-300">Send Message</button>
+                    <a href="thankyou.html" type="submit" class="w-full py-4 bg-gradient-to-r from-[#73284A] to-[#13354E] text-white font-semibold rounded-md hover:from-[#13354E] hover:to-[#73284A] transition duration-300">Send Message</a>
                 </div>
             </form>
         </div>
     </section>
-
-    <footer class="p-10 bg-gradient-to-r from-[#73284A] to-[#13354E] text-white">
-        <div class="max-w-7xl mx-auto grid grid-cols-5 gap-8">
-            <!-- Left Section -->
-            <div>
-                <div class="flex items-center space-x-2 mb-4">
-                    <span class="text-blue-400 text-3xl">&#9773;</span>
-                </div>
-                <p>Making the world a better place through constructing elegant hierarchies.</p>
-                <div class="flex space-x-4 mt-4">
-                    <span class="cursor-pointer">&#x1F30D;</span>
-                    <span class="cursor-pointer">&#x1F4F7;</span>
-                    <span class="cursor-pointer">&#x274C;</span>
-                    <span class="cursor-pointer">&#x1F4BB;</span>
-                    <span class="cursor-pointer">&#x25B6;</span>
-                </div>
-            </div>
-            <!-- Columns -->
-            <div>
-                <h3 class="font-semibold text-white">Solutions</h3>
-                <ul class="mt-4 space-y-2">
-                    <li>Marketing</li>
-                    <li>Analytics</li>
-                    <li>Automation</li>
-                    <li>Commerce</li>
-                    <li>Insights</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-semibold text-white">Support</h3>
-                <ul class="mt-4 space-y-2">
-                    <li>Submit ticket</li>
-                    <li>Documentation</li>
-                    <li>Guides</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-semibold text-white">Company</h3>
-                <ul class="mt-4 space-y-2">
-                    <li>About</li>
-                    <li>Blog</li>
-                    <li>Jobs</li>
-                    <li>Press</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-semibold text-white">Legal</h3>
-                <ul class="mt-4 space-y-2">
-                    <li>Terms of service</li>
-                    <li>Privacy policy</li>
-                    <li>License</li>
-                </ul>
-            </div>
-        </div>
-        <div class="mt-10 border-t border-gray-700 pt-4 text-center">
-            &copy; 2025 National University of technology, Inc. All rights reserved.
-        </div>
-    </footer>
+    <div id="footer"></div>
+    
+    <script>
+        fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+    });
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    });
+    </script>
 </body>
 </html>
 
