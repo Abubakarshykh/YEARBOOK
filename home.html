@@ -19,6 +19,7 @@
     <div id="Gallery"></div>
     <div id="abt"></div>
     <div id="team"></div>
+    <div id="events"></div>
     <!-- <div id="ourteam"></div> -->
     <div id="footer"></div>
 
@@ -63,11 +64,12 @@
     .then(data => {
         document.getElementById('team').innerHTML = data;
     });
-    fetch('ourteam.html')
+    fetch('events.html')
     .then(response => response.text())
     .then(data => {
-        document.getElementById('ourteam').innerHTML = data;
+        document.getElementById('events').innerHTML = data;
     });
+
 
 
     fetch('footer.html')
