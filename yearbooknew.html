@@ -10,7 +10,6 @@
     <h1 class="text-center text-4xl font-extrabold text-white mt-8">Yearbook</h1>
     <div id="data" class="w-auto py-6 mx-auto mt-2 px-4 bg-white/20 backdrop-blur-lg rounded-xl shadow-lg border border-white/30"></div>
 
-
     <!-- Popup -->
     <div id="popup" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center">
         <div class="bg-white p-6 rounded-xl shadow-2xl w-96 text-center relative">
@@ -18,6 +17,7 @@
             <h3 id="popup-name" class="text-2xl font-bold text-gray-900"></h3>
             <p id="popup-batch" class="text-gray-600 text-lg"></p>
             <p id="popup-department" class="text-gray-600 text-lg"></p>
+            <p id="popup-job" class="text-gray-600 text-lg"></p>
             <p class="mt-4 text-gray-700 text-base"><strong>Quote:</strong> <span id="popup-quote"></span></p>
         </div>
     </div>
@@ -58,11 +58,12 @@
                 const name = row[1]?.trim() || "Unknown";
                 const NutechID = row[3]?.trim() || "Unknown";
                 const department = row[5]?.trim() || "Unknown";
+                const job = row[6]?.trim() || "Unknown";
                 const quote = row[7]?.trim() || "No quote provided";
 
                 html += `
                     <div class='bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1 text-center cursor-pointer'  
-                        onclick="openPopup('${name}', '${batchName}', '${department}', '${quote}')">
+                        onclick="openPopup('${name}', '${batchName}', '${department}', '${job}', '${quote}')">
                         <h3 class='text-xl font-bold text-gray-900'>${name}</h3>
                         <p class='text-gray-600 font-medium'>Nutech ID: ${NutechID}</p>
                     </div>`;
@@ -72,27 +73,24 @@
             container.innerHTML += html;
         }
 
-        function openPopup(name, batch, department, quote) {
+        function openPopup(name, batch, department, job, quote) {
             document.getElementById("popup-name").textContent = name;
             document.getElementById("popup-batch").textContent = `Batch: ${batch}`;
             document.getElementById("popup-department").textContent = `Department: ${department}`;
+            document.getElementById("popup-job").textContent = `Job: ${job}`;
             document.getElementById("popup-quote").textContent = quote;
             document.getElementById("popup").classList.remove("hidden");
         }
 
         function closePopup(event) {
-    const popup = document.getElementById("popup");
-    const popupContent = popup.querySelector("div"); // Target the popup content
+            const popup = document.getElementById("popup");
+            if (!event || event.target === popup) {
+                popup.classList.add("hidden");
+            }
+        }
 
-    // Close only if the clicked area is outside the popup content
-    if (!popupContent.contains(event.target)) {
-        popup.classList.add("hidden");
-    }
-}
-
-// Add event listener to the popup background
-document.getElementById("popup").addEventListener("click", closePopup);
-
+        // Add event listener to close popup when clicking outside the content
+        document.getElementById("popup").addEventListener("click", closePopup);
     </script>
 </body>
 </html>

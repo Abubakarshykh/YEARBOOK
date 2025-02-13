@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .search-results {
+            position: absolute;
+            width: 100%;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .search-results.active {
+            display: block;
+        }
+        .search-results li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .search-results li:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="relative w-full max-w-md">
+        <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Search..." 
+            class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <ul id="search-results" class="search-results mt-2"></ul>
+    </div>
+
+    <script>
+        const pages = [
+            { name: "Home", url: "/", content: "Welcome to our website, explore the yearbook." },
+            { name: "Gallery", url: "/gallery", content: "Check out our photo collection and memories." },
+            { name: "About Us", url: "/aboutus", content: "Learn more about our history and team." },
+            { name: "Yearbook", url: "/yearbook", content: "Browse alumni entries, memories, and quotes." }
+        ];
+
+        const searchInput = document.getElementById("search-input");
+        const searchResults = document.getElementById("search-results");
+
+        searchInput.addEventListener("input", () => {
+            const query = searchInput.value.toLowerCase().trim();
+            searchResults.innerHTML = "";
+            if (query === "") {
+                searchResults.classList.remove("active");
+                return;
+            }
+            
+            const filteredPages = pages.filter(page => page.content.toLowerCase().includes(query));
+            
+            if (filteredPages.length > 0) {
+                searchResults.classList.add("active");
+                filteredPages.forEach(page => {
+                    const li = document.createElement("li");
+                    li.textContent = page.name;
+                    li.classList.add("p-2", "hover:bg-gray-100");
+                    li.addEventListener("click", () => {
+                        window.location.href = page.url;
+                    });
+                    searchResults.appendChild(li);
+                });
+            } else {
+                searchResults.classList.remove("active");
+            }
+        });
+    </script>
+</body>
+</html>
