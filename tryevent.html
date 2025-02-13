@@ -9,7 +9,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white text-gray-900 flex flex-col min-h-screen">
-
+  <div id="navbar"></div>
+  <br><br>
   <!-- Main content -->
   <main class="container mx-auto px-6 py-12 flex-grow">
     <div class="flex items-center justify-between mb-8">
@@ -110,6 +111,21 @@
     </section>
 
   </main>
+<!-- Footer--->
+<div id="footer"></div>
 
+<script>
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+    });
+
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>
 </body>
 </html>
