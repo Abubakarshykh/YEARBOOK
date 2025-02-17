@@ -8,71 +8,77 @@
 </head>
 <body class="font-sans bg-gray-100">
   <div id="navbar"></div>
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-[#73284A] to-[#13354E] text-white py-4">
-        <div class="container mx-auto text-center">
-            <h1 class="text-3xl font-semibold">Winter Gathering 2024</h1>
-        </div>
-    </header>
+   <br><br>
 
     <!-- Main Content -->
     <main class="max-w-screen-xl mx-auto my-8 px-4">
         <section id="photo-gallery" class="mb-12">
+            <h1 class="text-3xl font-semibold">Summer Gathering 2024</h1> <br>
             <h2 class="text-2xl font-semibold mb-4">Photo Highlights</h2>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
                 <!-- Photo 1 -->
                 <div class="memory bg-white p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-                    <img src="image 1.jpg" alt="Winter Gathering Photo 1" class="w-full h-48 object-cover rounded-lg mb-2"/>
+                    <img src="pics/i1.jpg" alt="Summer Gathering Photo 1" class="w-full h-48 object-cover rounded-lg mb-2"/>
                     <p class="text-center">Moment 1</p>
                 </div>
 
                 <!-- Photo 2 -->
                 <div class="memory bg-white p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-                    <img src="d:/samia/icat/final/pics/image 2.jpg" alt="Winter Gathering Photo 2" class="w-full h-48 object-cover rounded-lg mb-2"/>
+                    <img src="pics/i2.jpg" alt="Summer Gathering Photo 2" class="w-full h-48 object-cover rounded-lg mb-2"/>
                     <p class="text-center">Moment 2</p>
                 </div>
 
                 <!-- Photo 3 -->
                 <div class="memory bg-white p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-                    <img src="d:/samia/icat/final/pics/image 3.jpg" alt="Winter Gathering Photo 3" class="w-full h-48 object-cover rounded-lg mb-2"/>
+                    <img src="pics/i3.jpg" alt="Summer Gathering Photo 3" class="w-full h-48 object-cover rounded-lg mb-2"/>
                     <p class="text-center">Moment 3</p>
                 </div>
 
                 <!-- Photo 4 -->
                 <div class="memory bg-white p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-                    <img src="d:/samia/icat/final/pics/image 4.jpg" alt="Winter Gathering Photo 4" class="w-full h-48 object-cover rounded-lg mb-2"/>
+                    <img src="pics/i4.png" alt="Summer Gathering Photo 4" class="w-full h-48 object-cover rounded-lg mb-2"/>
                     <p class="text-center">Moment 4</p>
                 </div>
 
                 <!-- Photo 5 -->
                 <div class="memory bg-white p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-                    <img src="d:/samia/icat/final/pics/image 5.jpg" alt="Winter Gathering Photo 5" class="w-full h-48 object-cover rounded-lg mb-2"/>
+                    <img src="pics/i5.png" alt="Summer Gathering Photo 5" class="w-full h-48 object-cover rounded-lg mb-2"/>
                     <p class="text-center">Moment 5</p>
                 </div>
 
                 <!-- Photo 6 -->
                 <div class="memory bg-white p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-                    <img src="d:/samia/icat/final/pics/image 6.jpg" alt="Winter Gathering Photo 6" class="w-full h-48 object-cover rounded-lg mb-2"/>
+                    <img src="pics/i6.jpg" alt="Summer Gathering Photo 6" class="w-full h-48 object-cover rounded-lg mb-2"/>
                     <p class="text-center">Moment 6</p>
+                </div>
+
+                <!-- Photo 7 -->
+                <div class="memory bg-white p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+                    <img src="pics/i7.png" alt="Summer Gathering Photo 7" class="w-full h-48 object-cover rounded-lg mb-2"/>
+                    <p class="text-center">Moment 7</p>
                 </div>
 
             </div>
         </section>
-        <div id="footer"></div>
+       
     </main>
 
-    <script>
-      fetch('navbar.html')
-      .then(response => response.text())
-      .then(data => {
-          document.getElementById('navbar').innerHTML = data;
-      });
-      fetch('footer.html')
+    <!-- Footer--->
+<div id="footer"></div>
+
+<script>
+  fetch('navbar.html')
     .then(response => response.text())
     .then(data => {
-        document.getElementById('footer').innerHTML = data;
+      document.getElementById('navbar').innerHTML = data;
     });
-    </script>
+
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>
 </body>
 </html>
